@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+# remove jenkins repo
+rm -f /etc/apt/sources.list.d/jenkins.list
+
+# add release or stable repo && accept keys
+if ["$1" -eq "stable"]
+then
+   echo "deb http://pkg.jenkins-ci.org/debian-stable binary/" | tee /etc/apt/sources.list.d/jenkins.list
+   wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | sudo apt-key add -
+else 
+   echo "deb http://pkg.jenkins-ci.org/debian binary/" | tee /etc/apt/sources.list.d/jenkins.list
+   wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
+fi
+
+# install
+apt-get update
+apt-get install -y --no-install-recommends jenkins
