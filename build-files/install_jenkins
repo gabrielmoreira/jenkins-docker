@@ -4,6 +4,7 @@ set -e
 # remove jenkins repo
 rm -f /etc/apt/sources.list.d/jenkins.list
 
+
 # add release or stable repo && accept keys
 if ["$1" -eq "stable"]
 then

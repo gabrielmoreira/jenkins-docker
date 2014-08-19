@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-apt-get update
-apt-get -f -y --no-install-recommends upgrade

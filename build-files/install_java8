@@ -13,4 +13,5 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 
 # install
 apt-get update
+apt-get -f -y upgrade
 apt-get install -y --no-install-recommends oracle-java8-installer
