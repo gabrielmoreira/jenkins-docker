@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+sed -i "s/exec bash/sudo service jenkins start; exec bash/g" /usr/local/bin/wrapdocker
