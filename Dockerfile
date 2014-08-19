@@ -18,7 +18,6 @@ RUN /build/install_java8 && \
 
 # Install Jenkins latest release
 RUN /build/install_jenkins release && \
-    /build/fix_jenkins_23232_bug && \
     /build/clean
 
 # Install supervisor

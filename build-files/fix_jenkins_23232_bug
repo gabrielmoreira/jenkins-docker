@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-# BUG SEVERE: I/O error in channel Chunked connection
-# https://issues.jenkins-ci.org/browse/JENKINS-23232
-sed -i 's/headless=true/headless=true -Dhudson.diyChunking=false/g' /etc/default/jenkins
