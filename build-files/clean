@@ -2,8 +2,8 @@
 set -e
 
 apt-get clean
-apt-get autoclean
-apt-get autoremove
+apt-get -y autoclean
+apt-get -y autoremove
 rm -f /var/lib/apt/lists/*_*
 rm -f /usr/lib/jvm/java-8-oracle/*.zip
 rm -f /var/cache/oracle-jdk8-installer/*.tar.gz
