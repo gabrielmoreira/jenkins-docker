@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+apt-get update
+apt-get -y install supervisor
+mkdir -p /var/log/supervisor
+mv /build/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
