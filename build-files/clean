@@ -1,11 +1,9 @@
 #!/bin/bash
 set -e
 
-apt-get clean
 apt-get -y autoclean
 apt-get -y autoremove
-rm -f /var/lib/apt/lists/*_*
-rm -f /usr/lib/jvm/java-8-oracle/*.zip
-rm -f /var/cache/oracle-jdk8-installer/*.tar.gz
-rm -Rf /usr/lib/jvm/java-8-oracle/lib/missioncontrol
-rm -Rf /usr/lib/jvm/java-8-oracle/lib/visualvm
+rm -rf /var/cache/apt/archives/*.deb
+rm -rf /var/lib/apt/lists/*
+rm -rf /tmp/*
+apt-get clean

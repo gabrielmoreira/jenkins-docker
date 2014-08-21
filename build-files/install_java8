@@ -14,3 +14,11 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 # install
 apt-get update
 apt-get install -y oracle-java8-installer || (apt-get -f -y install && apt-get install -y oracle-java8-installer)
+
+# Clear Java8 temps
+rm -f /usr/lib/jvm/java-8-oracle/*.zip
+rm -f /var/cache/oracle-jdk8-installer/*.tar.gz
+
+# Clear Java8 missioncontrol and visualvm apps
+rm -rf /usr/lib/jvm/java-8-oracle/lib/missioncontrol
+rm -rf /usr/lib/jvm/java-8-oracle/lib/visualvm
